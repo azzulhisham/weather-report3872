@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {{>header}}
+    </head>
+
+    <body>
+        <a href="/"><img src="/img/weatherworld.png" style="display:block; margin-bottom:10px" width="130px"></a>
+     
+        <section class="bg-light">
+            <div class="container">
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="/img/bg-masthead.jpg" alt="" /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left" style="padding-left: 8px;">
+                            <h3>Place Name : <span style="color: dodgerblue;">{{place_name}}</span></h3>
+                            <h4>Longitude : <span style="color: dodgerblue;">{{longitude}}</span></h4>
+                            <h4>Latitude : <span style="color: dodgerblue;">{{latitude}}</span></h4>
+                            <h4>Current Temperature: <span style="color: dodgerblue;">{{currentTemp}} &#8451;</span></h4>
+                            <h4>Weather Description: <span style="color: dodgerblue;">{{weatherDesc}}</span></h4>
+                            <input type="hidden" id="searchLocation" value="{{searchRequest}}"><br />
+
+                            <form class="form-inline d-flex">
+                                <button class="btn btn-primary mx-auto" type="button" onclick="getCurrentWeatherRaw()">Get Weather In Raw Format</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>           
+            </div>
+        </section>  
+
+        <section>           
+            <div class="container">
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                    <div class="col-xl-12 col-lg-12">                       
+                        <div class="featured-text text-center text-lg-left" style="padding-left: 0px;">
+                            <span id="weatherRawData"></span>
+                        </div>
+                    </div>
+                </div>           
+            </div>
+        </section>
+    </body>
+
+    <footer>
+
+    </footer>
+
+    <script src="/js/getCurrentWeather.js"></script>
+</html>
